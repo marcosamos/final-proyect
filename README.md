@@ -1,2 +1,2 @@
 # final-proyect
-This is our final problem, we are the team 6
+This is our final project, we are the team 6

@@ -9,6 +9,11 @@ Week 11: Program Design - Pong Game
 * Chanae Ransom (ran21021@byui.edu)
 * Marcos Uc (ucs21001@byui.edu)
 
+# Tecnologies
+
+* Python 3
+* Pygame
+* VS code
 
 # Introduction
 We have chosen the classic game of Pong for our final team project. We chose this game because we like the simplicity of the game, but it also involves two players, instead of one, which adds to the fun. We came up with a list of features we would like to include in our Pong game and divided them up into two lists: must-have items (for game playability) and wish items (for cool fun features we’d like to add if there is time). 

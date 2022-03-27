@@ -1,4 +1,4 @@
-# Ball Class - 
+# Ball Class - define how ball appears and moves on screen
 
 
 class Ball:

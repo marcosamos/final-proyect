@@ -1,6 +1,5 @@
 # Ball Class - define how ball appears and moves on screen
-
-
+import pygame
 class Ball:
     def __init__(self, screen, color, posX, posY, radius):
         self.screen = screen
@@ -44,4 +43,3 @@ class Ball:
         self.dx = 0
         self.dy = 0
         self.show()
-    

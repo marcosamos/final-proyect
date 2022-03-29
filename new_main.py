@@ -18,7 +18,7 @@
 #   - Do we want to make Ball class parent of Paddle Class?
 
 
-import pygame, sys
+import pygame, sys, random
 
 ## CLASSES - move into separate files
 
@@ -142,7 +142,7 @@ class CollisionManager:
         # essentially asking - is the balls position somewhere between the two top and bottom corners of the rectangle/paddle
         if ball.posY + ball.radius > paddle1.posY and ball.posY - ball.radius < paddle1.posY + paddle1.height:
             # checking if ball is within the width of the rectangle as well
-            if ball.posX - ball.raduis <= paddle1.posX + paddle1.width:
+            if ball.posX - ball.radius <= paddle1.posX + paddle1.width:
                 return True
         return False
 
@@ -232,7 +232,7 @@ score2 = Score(screen, '0', WIDTH - WIDTH//4, 15)
 ## VARIABLES
 
 playing = False
-
+clock = pygame.time.Clock()
 ## MAINLOOP
 
 while True:
@@ -327,4 +327,5 @@ while True:
     score1.show()
     score2.show()
 
+    clock.tick(40)
     pygame.display.update()

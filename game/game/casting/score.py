@@ -1,4 +1,5 @@
-import constants
+from constants import *
+import pygame
 
 class Score:
     # score = show the screen, show the points, location of text/score)

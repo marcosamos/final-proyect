@@ -17,3 +17,11 @@ GREEN = Color(0, 255, 0)
 BALL_SIZE = 25
 PAD_WIDTH = 6
 PAD_HEIGHT = 60
+
+
+WIDTH = 900
+HEIGHT = 500
+# rgb- red green blue color codes
+BLACK = (0,0,0)
+WHITE = (255,255,255)
+PURPLE = (128,0,128)

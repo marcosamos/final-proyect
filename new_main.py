@@ -48,8 +48,8 @@ class Ball:
    
     # this function is the one responsible for moving the ball - we are changing the self.posX and self.posY variables. 
     def move(self):
-        self.posX = self.posX + self.dx
-        self.posY = self.posY + self.dx
+        self.posX += self.dx
+        self.posY += self.dy
 
     def paddle_collision(self):
         # change the X direction when hitting the paddle
@@ -137,6 +137,8 @@ class Score:
 class CollisionManager:
     # checking collision between ball and paddle1
     def between_ball_and_paddle1(self, ball, paddle1):
+
+        
         # checking if ball is below the paddle posY (top corner of rectangle) 
         # and checking if ball is above paddles posY + height (bottom corner rectangle)
         # essentially asking - is the balls position somewhere between the two top and bottom corners of the rectangle/paddle
@@ -156,13 +158,16 @@ class CollisionManager:
     
     # checking collision between ball and wall
     def between_ball_and_walls(self, ball):
+
+        ballY = ball.posY
         # top collision = checking if ball hit the top of screen
-        if ball.posY - ball.radius <= 0:
+        if ballY - ball.radius <= 0:
             return True
 
         # bottom collision = checking if ball hit the bottom of screen
-        if ball.posY - ball.radius >= HEIGHT:
+        if ballY + ball.radius >= HEIGHT:
             return True
+
         return False
 
     def check_goal_player1(self, ball):
@@ -327,5 +332,5 @@ while True:
     score1.show()
     score2.show()
 
-    clock.tick(10)
+    clock.tick(40)
     pygame.display.update()

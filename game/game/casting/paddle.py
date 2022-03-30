@@ -2,12 +2,11 @@ from casting.cast import Actors
 import constants, pygame
 
 
-class Ball(Actors):
+class Paddle(Actors):
 
     def __init__(self):
         
         super().__init__()
-        
 
     def show(self):
         pygame.draw.rect(self.screen, self.color, (self.posX, self.posY, self.width, self.height))
@@ -30,9 +29,4 @@ class Ball(Actors):
         # this formula is taking the top left corner of rectangle/paddle + the height of 
         # the rectangle which gives us the bottom corner position and checking that against the Height of the screen.
         if self.posY + self.height >= constants.HEIGHT:
-            self.posY = constants.HEIGHT - self.height 
-
-    def restart_pos(self):
-        self.posY = constants.HEIGHT//2 - self.height//2
-        self.state = 'stopped'
-        self.show()
+            self.posY = constants.HEIGHT - self.height     

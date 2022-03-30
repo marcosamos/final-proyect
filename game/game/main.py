@@ -1,7 +1,6 @@
-from asyncio import constants
 import pygame, sys
-from constants import HEIGHT, WIDTH, CAPTION, BLACK, WHITE, PURPLE
-from casting.cast import Actors
+from constants import *
+from casting.cast import *
 from casting.ball import Ball
 from casting.paddle import Paddle
 from casting.score import Score

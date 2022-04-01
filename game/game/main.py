@@ -41,13 +41,13 @@ ball = Ball(screen, PURPLE, WIDTH//2, HEIGHT//2, BALL_SIZE)
 # PADDLE1
 # Take HEIGHT of screen // 2 to put top of paddle in the center, and then 
 # subtract by 60 (which is half the height of the rectangle) to put the middle of the rectangle in the middle. 
-paddle1 = Paddle(screen, BLACK, 15, HEIGHT//2 - 60, 20, 120)
+paddle1 = Paddle(screen, BLACK, 15, HEIGHT//2 - 60, PAD_WIDTH, PAD_HEIGHT)
 
 # PADDLE2
 # we want the paddle to show on the right side of the screen, so we must take 
 # the WIDTH of the screen and -20 (which is the width of the paddle) -15 (to give us an offset 
 # between the wall and the paddle), then the formula to place the rectangle in the center of the line.
-paddle2 = Paddle(screen, BLACK, WIDTH - 20 - 15, HEIGHT//2 - 60, 20, 120)
+paddle2 = Paddle(screen, BLACK, WIDTH - 20 - 15, HEIGHT//2 - 60, PAD_WIDTH, PAD_HEIGHT)
 
 collision = CollisionManager()
 
@@ -153,5 +153,5 @@ while True:
     score1.show()
     score2.show()
 
-    clock.tick(40)
+    clock.tick(GAME_SPEED)
     pygame.display.update()

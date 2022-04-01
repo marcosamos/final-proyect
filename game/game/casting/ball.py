@@ -1,38 +1,53 @@
 from casting.cast import Actors
-import constants, pygame
+import pygame
+from constants import *
 
 
-class Ball(Actors):
+# class Ball(Actors):
 
-    def __init__(self):
+#     def __init__(self):
         
-        super().__init__()
+#         super().__init__()
         
+class Ball:
+    def __init__(self, screen, color, posX, posY, radius):
+        self.screen = screen
+        self.color = color
+        # posX and posY positions for initial starting point for ball
+        self.posX = posX
+        self.posY = posY
+        self.radius = radius
+        # the DIRECTION variables for the x and y position of our ball when moving
+        self.dx = 0
+        self.dy = 0
+
+        # call show method so that as soon as the ball method is called it shows the ball
+        self.show()
 
     def show(self):
-        pygame.draw.rect(self.screen, self.color, (self.posX, self.posY, self.width, self.height))
+        pygame.draw.circle(self.screen, self.color, (self.posX, self.posY), self.radius)
 
     # check if self.state is up or down 
+    def start_move(self):
+        self.dx = 15
+        self.dy = 5
+    
     def move(self):
-        if self.state == 'up':
-            self.posY -= 10
+        self.posX += self.dx
+        self.posY += self.dy
 
-        elif self.state == 'down':
-            self.posY += 10
-
-    def clamp(self):
-        # stops the paddles from going above/out of the screen 
-        # this formula is checking if the top left corner of rectangle/paddle is going above
-        if self.posY <= 0:
-            self.posY = 0
+    def paddle_collision(self):
+        # change the X direction when hitting the paddle
+        self.dx = -self.dx
         
-        # stops the paddles from going below/out of the screen
-        # this formula is taking the top left corner of rectangle/paddle + the height of 
-        # the rectangle which gives us the bottom corner position and checking that against the Height of the screen.
-        if self.posY + self.height >= constants.HEIGHT:
-            self.posY = constants.HEIGHT - self.height 
+    def wall_collision(self):
+        # change the Y direction when hitting the wall(top/bottom)
+        self.dy = -self.dy
 
     def restart_pos(self):
-        self.posY = constants.HEIGHT//2 - self.height//2
-        self.state = 'stopped'
+        # return the ball back to starting position when ball goes out of bounds/when player receives a point
+        self.posX = WIDTH//2
+        self.posY = HEIGHT//2
+        self.dx = 0
+        self.dy = 0
         self.show()

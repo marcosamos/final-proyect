@@ -34,7 +34,7 @@ paint_back()
 
 ## OBJECTS
 
-ball = Ball(screen, PURPLE, WIDTH//2, HEIGHT//2, 12)
+ball = Ball(screen, PURPLE, WIDTH//2, HEIGHT//2, BALL_SIZE)
 
 #  we want the paddles to display on either side in the center of the line... 
 
@@ -70,7 +70,7 @@ while True:
             
             # if the key 'p' is pressed down then game will play
             if event.key == pygame.K_p:
-                ball.start_moving()
+                ball.start_move()
                 playing = True
 
             if event.key == pygame.K_r:

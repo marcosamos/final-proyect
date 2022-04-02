@@ -1,5 +1,4 @@
 
-
 class Actors:
     def __init__(self, screen, color, posX, posY, radius, width, height):
         self.screen = screen

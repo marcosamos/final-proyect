@@ -22,10 +22,12 @@ We have chosen the classic game of Pong for our final team project. We chose thi
 Must-Have Features List:
 
 Open Scene - 
-press spacebar to start
+press the letter p to start
 
 Game Scene -
-2 user controlled paddles
+2 user controlled paddles: 
+   * First player w and s 
+   * Second player up and down
 Ball movement
 Score display
 Paddle/Ball detection hitting the ball
@@ -45,7 +47,5 @@ Plan:
 Wall Class - define the walls/dimensions of the screen
 Paddle Class - (child class of Wall class) define how paddle appears on the screen 
 Ball Class - define how ball appears on screen
-KeyboardService - key assignments for moving the paddles for both players
 Interaction - define how ball interacts when it hits the paddle or the wall
 Main file = score function, open scene (game loop), end scene (announcement of winner)
-
